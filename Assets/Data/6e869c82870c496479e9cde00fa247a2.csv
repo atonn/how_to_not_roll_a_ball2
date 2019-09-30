@@ -1,0 +1,6 @@
+eventType,timestamp,ballXPosition,ballYPosition,ballXVelocity,ballYVelocity,wallRequiredDirectionToPass,wallArrowOrientation,isCompatible,wallCollisionX,wallCollisionY,
+wallSpawn,3,056838,3,1,259052,0,0,0,0,up,up,True,
+wallSpawn,4,790029,3,1,259052,0,0,0,0,right,right,True,
+wallSpawn,6,555306,3,229643,7,706965,2,399827,-15,90158,-15,90158,-15,90158,left,left,True,
+wallSpawn,8,310283,7,348113,1,259052,-9,543071,-5,90086E-06,-5,90086E-06,-5,90086E-06,left,left,True,
+wallSpawn,10,07218,-5,455036,1,259052,4,328677,0,0,0,right,right,True,

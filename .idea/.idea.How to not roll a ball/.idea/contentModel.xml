@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\fnosratnezam\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\fnosratnezam\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_How to not roll a ball.1913426194.00" t="ExcludeRecursive" />
+    <e p="D:\VR in Unity\How to not roll a ball" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Script" t="Include">
+          <e p="CameraPosition.cs" t="Include" />
+          <e p="Collecting.cs" t="Include" />
+          <e p="MoveBall.cs" t="Include" />
+          <e p="UpdateLoop.cs" t="Include" />
+        </e>
+      </e>
+      <e p="How to not roll a ball.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
