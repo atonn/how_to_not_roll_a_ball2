@@ -4,6 +4,8 @@ Web Version: [http://howtonotrollaball2.surge.sh](http://howtonotrollaball2.surg
 
 Android Version (.apk): https://mega.nz/#!49Y23C5Z!LHyJIFeYenSKqp7QNn_hFuPfDgnO4ai2VWtbNXpTcXA
 
+![Title Image](title.jpg)
+
 ## Controls
 * A: move left
 * D: move right
