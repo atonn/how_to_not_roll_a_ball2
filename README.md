@@ -1,6 +1,8 @@
 ﻿# How to not roll a ball 2
 
-One Paragraph of project description goes here
+Web Version: [http://howtonotrollaball2.surge.sh](http://howtonotrollaball2.surge.sh/)
+
+Android Version (.apk): https://mega.nz/#!49Y23C5Z!LHyJIFeYenSKqp7QNn_hFuPfDgnO4ai2VWtbNXpTcXA
 
 ## Controls
 * A: move left
@@ -25,7 +27,7 @@ instead of designing complex gigantic levels beforehand.
 * Interpreting movement data from 3D objects for scientific purposes is quite difficult
 * we originally wanted more complex "stroop task walls" where the visible wall could be fake/passable and an invisible wall next to it would be the actual wall, but it turned out clunky
 * trying to get all tunable parameters for the experiment in one convenient unity GUI inspector is tricky
- 
+
 ## What grade we think is suitable
 ### Pros:
 * we think the gameplay and feel of it turned out quite cool

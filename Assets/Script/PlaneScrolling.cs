@@ -10,13 +10,13 @@ public class PlaneScrolling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _renderer = GetComponent<Renderer> ();    
+        _renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float vOffset = Time.time * scrollSpeed;
-        _renderer.material.SetTextureOffset("_MainTex", new Vector2(0,-vOffset));
+        _renderer.material.SetTextureOffset("_MainTex", new Vector2(0, -vOffset));
     }
 }

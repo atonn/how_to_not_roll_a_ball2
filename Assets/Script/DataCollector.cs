@@ -5,21 +5,21 @@ using UnityEditor;
 
 public class DataCollector : MonoBehaviour
 {
-    public static DataCollector DC; 
+    public static DataCollector DC;
     private List<List<string>> _data;
     private List<string> _csvHeaders;
     // Start is called before the first frame update
 
     //from: https://answers.unity.com/questions/323195/how-can-i-have-a-static-class-i-can-access-from-an.html
     void Awake()
-     {
-         if(DC != null)
-             GameObject.Destroy(DC);
-         else
-             DC = this;
-         
-         DontDestroyOnLoad(this);
-     }
+    {
+        if (DC != null)
+            GameObject.Destroy(DC);
+        else
+            DC = this;
+
+        DontDestroyOnLoad(this);
+    }
 
     void Start()
     {
@@ -47,30 +47,32 @@ public class DataCollector : MonoBehaviour
     //the ball (or wall) when both collide,
     //or the invisible wall that collides with walls that the ball "passed" and did not collide with
     //to request to log everything to a csv row, which is handled here centrally
-    public void requestDatapointLogging(string eventType, GameObject theWallInQuestion, Collision collision = null) {
+    public void requestDatapointLogging(string eventType, GameObject theWallInQuestion, Collision collision = null)
+    {
         Debug.Log("Requested Logging!");
 
         List<string> eventData = new List<string>();
         eventData.Add(eventType);
-        eventData.Add(Time.realtimeSinceStartup.ToString().Replace( ",", "." ));
+        eventData.Add(Time.realtimeSinceStartup.ToString().Replace(",", "."));
 
         GameObject ball = GameObject.Find("Ball");
         // .Replace( ",", "." ) - because float and csv comma separation dislike each other (depending on the OS)
-        eventData.Add(ball.GetComponent<MoveBall>().GetXPosition().ToString().Replace( ",", "." ));
-        eventData.Add(ball.GetComponent<MoveBall>().GetYPosition().ToString().Replace( ",", "." ));
-        eventData.Add(ball.GetComponent<MoveBall>().GetXVelocity().ToString().Replace( ",", "." ));
-        eventData.Add(ball.GetComponent<MoveBall>().GetYVelocity().ToString().Replace( ",", "." ));
+        eventData.Add(ball.GetComponent<MoveBall>().GetXPosition().ToString().Replace(",", "."));
+        eventData.Add(ball.GetComponent<MoveBall>().GetYPosition().ToString().Replace(",", "."));
+        eventData.Add(ball.GetComponent<MoveBall>().GetXVelocity().ToString().Replace(",", "."));
+        eventData.Add(ball.GetComponent<MoveBall>().GetYVelocity().ToString().Replace(",", "."));
 
         eventData.Add(theWallInQuestion.GetComponent<StroopWall>().requiredDirectionToPass);
         eventData.Add(theWallInQuestion.GetComponent<StroopWall>().arrowOrientation);
         eventData.Add(theWallInQuestion.GetComponent<StroopWall>().IsComplatible().ToString());
 
-        if (collision != null) {
+        if (collision != null)
+        {
             //First contact points
-            eventData.Add(collision.contacts[0].point[0].ToString().Replace( ",", "." )); //x
-            eventData.Add(collision.contacts[0].point[1].ToString().Replace( ",", "." )); //y
+            eventData.Add(collision.contacts[0].point[0].ToString().Replace(",", ".")); //x
+            eventData.Add(collision.contacts[0].point[1].ToString().Replace(",", ".")); //y
         }
-        
+
         _data.Add(eventData);
     }
 
@@ -78,7 +80,8 @@ public class DataCollector : MonoBehaviour
     // WRITING LOG TO CSV FILE AND QUITTING THE GAME VIA ESCAPE BUTTON
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             Debug.Log("End of experiment, you are a russian spy!");
 
             List<string> csvLines = CSVTools.GenerateCSV(_data, _csvHeaders);
@@ -87,7 +90,9 @@ public class DataCollector : MonoBehaviour
                 Debug.Log(line);
             }
 
-            CSVTools.SaveCSV(csvLines, Application.dataPath + "/Data/" + GUID.Generate());
+            //android does not support GUID, only System.Guid
+            CSVTools.SaveCSV(csvLines, Application.dataPath + "/Data/" + System.Guid.NewGuid());
+
             Application.Quit();
         }
     }
